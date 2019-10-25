@@ -1,0 +1,7 @@
+zookeeper-server-start.bat D:\k\kafka_2.11-2.3.0\config\zookeeper.properties
+kafka-server-start.bat D:\k\kafka_2.11-2.3.0\config\server.properties
+zookeeper-shell.bat localhost:2181 ls /brokers/ids
+
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
+kafka-console-producer.bat --broker-list localhost:9092 --topic test
+kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --from-beginning
