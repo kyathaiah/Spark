@@ -22,7 +22,7 @@ def main(args:Array[String] ){
     var l = rdd.map(_.split(" "))
     val pdf = l.map(p => attacker(p(0),p(1)))
     val attackerdf = sqlContext.createDataFrame(pdf)
-    val ips = attackerdf.groupBy("ip").count.filter($"count">2)	
+    val ips = attackerdf.groupBy("ip").count.filter($"count">10)	
 	ips.show() 
     ips.write.mode("overwrite").csv("D:\\k\\attaker_output")	
     })	
